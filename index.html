@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="logo">Bom Leite</div>
-    <nav class="navegação">
+
+    <!-- Botão hambúrguer para telas pequenas -->
+    <button id="menu-toggle" class="hamburger" aria-label="Abrir Menu">&#9776;</button>
+
+    <nav class="navegação" id="navbar">
       <a href="#" id="toggle-intro">Introdução</a>
       <a href="#" id="toggle-fundadores">Fundadores</a>
       <button class="btnlogin-popup" id="open-login">Login</button>
@@ -23,21 +27,18 @@
     <p id="user-email"></p>
   </section>
 
- 
   <div id="intro-modal" class="hidden">
     <div class="modal-content">
       <span id="close-intro" class="close-btn">&times;</span>
       <section class="intro-box">
         <h1>Seja bem-vindo ao "Bom dia com bom leite"!</h1>
-<p>Aqui celebramos o amanhecer com alegria, fazendinha, e aquele leite fresquinho cheio de carinho. 🌞🐄</p>
-<p>Explore nossas histórias, conheça os fundadores e aproveite um site feito com amor e simplicidade!</p>
-<p>Fundada em 1990, a Bom Leite é uma das pioneiras de São Bento do Una, atuando há mais de 30 anos no setor de laticínios. Apesar dos altos e baixos na produção, a empresa segue firme e em crescimento.</p>
-<p>Sua sede fica na PE-180, Km 18, bairro José do Patrocínio Mota, com filiais em PE, AL, PB e BA. Reconhecida pela qualidade e compromisso com a segurança alimentar, a Bom Leite mantém uma equipe qualificada e estrutura moderna.</p>
-
+        <p>Aqui celebramos o amanhecer com alegria, fazendinha, e aquele leite fresquinho cheio de carinho. 🌞🐄</p>
+        <p>Explore nossas histórias, conheça os fundadores e aproveite um site feito com amor e simplicidade!</p>
+        <p>Fundada em 1990, a Bom Leite é uma das pioneiras de São Bento do Una, atuando há mais de 30 anos no setor de laticínios. Apesar dos altos e baixos na produção, a empresa segue firme e em crescimento.</p>
+        <p>Sua sede fica na PE-180, Km 18, bairro José do Patrocínio Mota, com filiais em PE, AL, PB e BA. Reconhecida pela qualidade e compromisso com a segurança alimentar, a Bom Leite mantém uma equipe qualificada e estrutura moderna.</p>
       </section>
     </div>
   </div>
-
 
   <div id="fundadores-modal" class="hidden">
     <div class="modal-content">

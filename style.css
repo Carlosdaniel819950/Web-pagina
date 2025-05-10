@@ -17,7 +17,6 @@ body {
   background-position: center;
 }
 
-
 header {
   position: fixed;
   top: 0;
@@ -91,7 +90,6 @@ header {
   color: #162938;
   transform: scale(1.05);
 }
-
 
 .wrapper {
   position: relative;
@@ -326,7 +324,6 @@ header {
   color: #ff4f4f;
 }
 
-
 .intro-section {
   margin-top: 120px;
   padding: 20px;
@@ -356,8 +353,8 @@ header {
 }
 
 .intro-box p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: #f0f0f0;
 }
 
@@ -371,10 +368,9 @@ header {
   }
 
   .intro-box p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
-
 
 .user-info-box {
   background-color: rgba(255, 255, 255, 0.15);
@@ -396,7 +392,46 @@ header {
 }
 
 .user-info-box p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #eee;
-  margin-top: 10px;
+  margin-top: 8px;
+}
+css /* Menu hamburguer - escondido em telas grandes */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .navegação {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    display: none;
+  }
+
+  .navegação.active {
+    display: flex;
+  }
+
+  .navegação a,
+  .navegação .btnlogin-popup {
+    margin: 15px 0;
+  }
 }
