@@ -28,7 +28,10 @@
     <a href="#">Inicial</a>
     <a href="#">Serviços</a>
     <a href="#">Contato</a>
-    <a href="#" id="toggle-fundadores">Fundadores</a>  
+    <a href="#" id="toggle-fundadores">Fundadores</a>
+    <span id="user-info" class="user-info">
+      <span id="user-nome"></span> <span id="user-email"></span>
+    </span>
     <button class="btnlogin-popup" id="open-login">Login</button>
     <button id="logout-btn" class="hidden">Sair</button>
   </nav>
@@ -38,25 +41,21 @@
   <h1 id="welcome-msg">Bem-vindo!</h1>
 </main>
 
-<!-- SEÇÃO FUNDADORES -->
 <section id="fundadores" class="hidden-section">
   <h2>Fundadores do Projeto</h2>
   <p><strong>Carlos Daniel</strong> – Desenvolvedor e idealizador da plataforma.</p>
-  <p><strong>Pamela Melo</strong> –  Desenvolvedor e idealizador da plataforma .</p>
+  <p><strong>Pamela Melo</strong> – Desenvolvedora e idealizadora da plataforma.</p>
   <p><strong>Gabriel Teixeira</strong> – Desenvolvedor e idealizador da plataforma.</p>
-  <p><strong>Anny Grazielly</strong> – Desenvolvedores de designer grafico.</p>
-  <p><strong>Itallo Lopez</strong> – Desenvolvedores de designer grafico.</p>
-  <p><strong>Everton Vinucius</strong> – Desenvolvedores de designer grafico.</p>
-  <p><strong>Eduarda</strong> – Desenvolvedores de designer grafico.</p>
-  <p><strong>João Lucas</strong> – Desenvolvedores de designer grafico.</p>
-  <p><strong>João Pedro</strong> – Desenvolvedores de designer grafico.</p>
+  <p><strong>Anny Grazielly</strong>, <strong>Itallo Lopez</strong>, <strong>Everton Vinucius</strong>, <strong>Eduarda</strong>, <strong>João Lucas</strong>, <strong>João Pedro</strong> – Designers gráficos do projeto.</p>
 </section>
 
+<!-- Formulários de Login e Registro -->
 <div class="wrapper hidden" id="form-wrapper">
+  <!-- Login -->
   <div class="form-box login">
     <button class="close-btn" id="close-login">×</button>
     <h2>Login</h2>
-    <form action="#">
+    <form>
       <div class="input-box">
         <span class="icon"><ion-icon name="mail"></ion-icon></span>
         <input type="email" id="login-email" placeholder="Digite seu email" required>
@@ -78,10 +77,11 @@
     </form>
   </div>
 
+  <!-- Registro -->
   <div class="form-box register hidden">
     <button class="close-btn" id="close-register">×</button>
     <h2>Registrar</h2>
-    <form action="#">
+    <form>
       <div class="input-box">
         <span class="icon"><ion-icon name="person"></ion-icon></span>
         <input type="text" id="register-nome" placeholder="Digite seu nome completo" required>
@@ -105,9 +105,11 @@
   </div>
 </div>
 
+<!-- Ícones -->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<!-- Script principal -->
 <script>
   const wrapper = document.getElementById('form-wrapper');
   const loginForm = document.querySelector('.form-box.login');
@@ -121,6 +123,8 @@
   const registerButton = registerForm.querySelector('.btn');
   const logoutBtn = document.getElementById('logout-btn');
   const welcomeMsg = document.getElementById('welcome-msg');
+  const userEmailSpan = document.getElementById('user-email');
+  const userNomeSpan = document.getElementById('user-nome');
 
   openLoginBtn.addEventListener('click', () => {
     wrapper.classList.remove('hidden');
@@ -197,8 +201,11 @@
   function atualizarTela() {
     const nome = localStorage.getItem('userName');
     const email = localStorage.getItem('userEmail');
+
     if (nome || email) {
       welcomeMsg.textContent = `Bem-vindo, ${nome || email}!`;
+      userEmailSpan.textContent = email ? `(${email})` : '';
+      userNomeSpan.textContent = nome ? `${nome}` : '';
       logoutBtn.classList.remove('hidden');
       openLoginBtn.classList.add('hidden');
     }
@@ -208,11 +215,14 @@
     localStorage.removeItem('userName');
     localStorage.removeItem('userEmail');
     welcomeMsg.textContent = 'Bem-vindo!';
+    userEmailSpan.textContent = '';
+    userNomeSpan.textContent = '';
     logoutBtn.classList.add('hidden');
     openLoginBtn.classList.remove('hidden');
   });
 
   window.addEventListener('DOMContentLoaded', atualizarTela);
+
   const linkFundadores = document.getElementById('toggle-fundadores');
   const secaoFundadores = document.getElementById('fundadores');
 

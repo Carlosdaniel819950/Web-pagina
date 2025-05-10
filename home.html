@@ -10,8 +10,44 @@
       margin: 0;
       background: url('sua-imagem.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #000;
       font-family: 'Poppins', sans-serif;
+      color: #000;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 50px;
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .navegação a, .navegação button {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .navegação {
+      display: flex;
+      align-items: center;
     }
 
     .info-box {
@@ -19,7 +55,6 @@
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      width: fit-content;
       max-width: 90%;
       margin: 150px auto 0;
       text-align: center;
@@ -35,25 +70,40 @@
       font-size: 18px;
       margin-bottom: 8px;
     }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navegação {
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .navegação a, .navegação button {
+        margin: 5px 10px 0 0;
+      }
+    }
   </style>
 </head>
 <body>
- <header>
-  <h2 class="logo">Projeto de Icaro</h2>
-  <nav class="navegação">
-    <a href="#">Inicial</a>
-    <a href="#">Serviços</a>
-    <a href="#">Contato</a>
-    <a href="#">Fundadores</a> 
-    <button class="btnlogin-popup" id="logout-btn">Sair</button>
-  </nav>
-</header>
-
+  <header>
+    <h2 class="logo">Bom Dia com Bom Leite</h2>
+    <nav class="navegação">
+      <a href="#">Inicial</a>
+      <a href="#">Serviços</a>
+      <a href="#">Contato</a>
+      <a href="#">Fundadores</a> 
+      <button id="logout-btn">Sair</button>
+    </nav>
+  </header>
 
   <div class="info-box">
     <h1>Bem-vindo, <span id="user-nome">Usuário</span>!</h1>
     <p>Seu email: <span id="user-email">email@email.com</span></p>
-    <p>Aproveite para adquiri conhecimento.</p>
+    <p>Aproveite para adquirir conhecimento.</p>
   </div>
 
   <script>
