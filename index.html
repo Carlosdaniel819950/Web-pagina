@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login e Registro</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .hidden-section {
+      display: none;
+    }
+
+    #fundadores {
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h2 class="logo">Bom Dia com Bom Leite</h2>
+  <nav class="navegação">
+    <a href="#">Inicial</a>
+    <a href="#">Serviços</a>
+    <a href="#">Contato</a>
+    <a href="#" id="toggle-fundadores">Fundadores</a>  
+    <button class="btnlogin-popup" id="open-login">Login</button>
+    <button id="logout-btn" class="hidden">Sair</button>
+  </nav>
+</header>
+
+<main>
+  <h1 id="welcome-msg">Bem-vindo!</h1>
+</main>
+
+<!-- SEÇÃO FUNDADORES -->
+<section id="fundadores" class="hidden-section">
+  <h2>Fundadores do Projeto</h2>
+  <p><strong>Carlos Daniel</strong> – Desenvolvedor e idealizador da plataforma.</p>
+  <p><strong>Pamela Melo</strong> –  Desenvolvedor e idealizador da plataforma .</p>
+  <p><strong>Gabriel Teixeira</strong> – Desenvolvedor e idealizador da plataforma.</p>
+  <p><strong>Anny Grazielly</strong> – Desenvolvedores de designer grafico.</p>
+  <p><strong>Itallo Lopez</strong> – Desenvolvedores de designer grafico.</p>
+  <p><strong>Everton Vinucius</strong> – Desenvolvedores de designer grafico.</p>
+  <p><strong>Eduarda</strong> – Desenvolvedores de designer grafico.</p>
+  <p><strong>João Lucas</strong> – Desenvolvedores de designer grafico.</p>
+  <p><strong>João Pedro</strong> – Desenvolvedores de designer grafico.</p>
+</section>
+
+<div class="wrapper hidden" id="form-wrapper">
+  <div class="form-box login">
+    <button class="close-btn" id="close-login">×</button>
+    <h2>Login</h2>
+    <form action="#">
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" id="login-email" placeholder="Digite seu email" required>
+        <label for="login-email">Email</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" id="login-senha" placeholder="Digite sua senha" required>
+        <label for="login-senha">Senha</label>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox"> Lembrar-me</label>
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+      <div class="login-link">
+        <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="form-box register hidden">
+    <button class="close-btn" id="close-register">×</button>
+    <h2>Registrar</h2>
+    <form action="#">
+      <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        <input type="text" id="register-nome" placeholder="Digite seu nome completo" required>
+        <label for="register-nome">Nome Completo</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" id="register-email" placeholder="Digite seu email" required>
+        <label for="register-email">Email</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" id="register-senha" placeholder="Crie uma senha" required>
+        <label for="register-senha">Senha</label>
+      </div>
+      <button type="submit" class="btn">Registrar</button>
+      <div class="login-link">
+        <p>Já tem uma conta? <a href="#" id="show-login">Voltar ao login</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+  const wrapper = document.getElementById('form-wrapper');
+  const loginForm = document.querySelector('.form-box.login');
+  const registerForm = document.querySelector('.form-box.register');
+  const showRegister = document.getElementById('show-register');
+  const showLogin = document.getElementById('show-login');
+  const openLoginBtn = document.getElementById('open-login');
+  const closeLoginBtn = document.getElementById('close-login');
+  const closeRegisterBtn = document.getElementById('close-register');
+  const loginButton = loginForm.querySelector('.btn');
+  const registerButton = registerForm.querySelector('.btn');
+  const logoutBtn = document.getElementById('logout-btn');
+  const welcomeMsg = document.getElementById('welcome-msg');
+
+  openLoginBtn.addEventListener('click', () => {
+    wrapper.classList.remove('hidden');
+    loginForm.classList.remove('hidden');
+    registerForm.classList.add('hidden');
+  });
+
+  showRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginForm.classList.add('hidden');
+    registerForm.classList.remove('hidden');
+  });
+
+  showLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    registerForm.classList.add('hidden');
+    loginForm.classList.remove('hidden');
+  });
+
+  function fecharFormulario() {
+    wrapper.classList.add('hidden');
+  }
+
+  closeLoginBtn.addEventListener('click', fecharFormulario);
+  closeRegisterBtn.addEventListener('click', fecharFormulario);
+
+  function animarBotao(botao) {
+    let esquerda = 0;
+    botao.style.position = 'relative';
+    const intervalo = setInterval(() => {
+      esquerda += 10;
+      botao.style.left = `${(esquerda % 40) - 20}px`;
+    }, 50);
+    setTimeout(() => {
+      clearInterval(intervalo);
+      botao.style.left = '0';
+    }, 600);
+  }
+
+  loginButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const senha = document.getElementById('login-senha').value.trim();
+
+    if (!email || !senha) {
+      alert('Por favor, preencha todos os campos de login!');
+      animarBotao(loginButton);
+      return;
+    }
+
+    localStorage.setItem('userEmail', email);
+    atualizarTela();
+    fecharFormulario();
+  });
+
+  registerButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const nome = document.getElementById('register-nome').value.trim();
+    const email = document.getElementById('register-email').value.trim();
+    const senha = document.getElementById('register-senha').value.trim();
+
+    if (!nome || !email || !senha) {
+      alert('Por favor, preencha todos os campos de registro!');
+      animarBotao(registerButton);
+      return;
+    }
+
+    localStorage.setItem('userName', nome);
+    localStorage.setItem('userEmail', email);
+    atualizarTela();
+    fecharFormulario();
+  });
+
+  function atualizarTela() {
+    const nome = localStorage.getItem('userName');
+    const email = localStorage.getItem('userEmail');
+    if (nome || email) {
+      welcomeMsg.textContent = `Bem-vindo, ${nome || email}!`;
+      logoutBtn.classList.remove('hidden');
+      openLoginBtn.classList.add('hidden');
+    }
+  }
+
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userEmail');
+    welcomeMsg.textContent = 'Bem-vindo!';
+    logoutBtn.classList.add('hidden');
+    openLoginBtn.classList.remove('hidden');
+  });
+
+  window.addEventListener('DOMContentLoaded', atualizarTela);
+  const linkFundadores = document.getElementById('toggle-fundadores');
+  const secaoFundadores = document.getElementById('fundadores');
+
+  linkFundadores.addEventListener('click', function (e) {
+    e.preventDefault();
+    secaoFundadores.classList.toggle('hidden-section');
+    if (!secaoFundadores.classList.contains('hidden-section')) {
+      secaoFundadores.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+</body>
+</html>

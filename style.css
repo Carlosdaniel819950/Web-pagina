@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('arquivo.index1.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 2rem;
+  color: #fff;
+  user-select: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.navegação a {
+  position: relative;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: color 0.3s;
+}
+
+.navegação a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.navegação a:hover {
+  color: #ffebeb;
+}
+
+.navegação a:hover::after {
+  transform: scaleX(1);
+}
+
+.navegação .btnlogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: all 0.4s ease;
+}
+
+.navegação .btnlogin-popup:hover {
+  background: #fff;
+  color: #162938;
+  transform: scale(1.05);
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  margin: 50px auto;
+}
+
+.form-box {
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.form-box h2 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ==== INPUT BOX COM LABEL FLUTUANTE ==== */
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 40px 14px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s ease;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0 5px;
+  border-radius: 4px;
+}
+/* ==== FIM DO LABEL FLUTUANTE ==== */
+
+.remember-forgot {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  margin: -10px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-forgot label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 5px;
+  transform: scale(1.2);
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.remember-forgot a:hover {
+  color: #ffebeb;
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #162938;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+  background: #ffebeb;
+  transform: scale(1.02);
+}
+
+.login-link {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #ffebeb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-box.login {
+  z-index: 2;
+}
+
+.form-box.register {
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .form-box h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #ff4f4f;
+}
+
+.user-info-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 400px;
+  margin: 150px auto 0;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.user-info-box h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.user-info-box p {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-top: 10px;
+}

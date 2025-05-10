@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      margin: 0;
+      background: url('sua-imagem.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: fit-content;
+      max-width: 90%;
+      margin: 150px auto 0;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-box h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+ <header>
+  <h2 class="logo">Projeto de Icaro</h2>
+  <nav class="navegação">
+    <a href="#">Inicial</a>
+    <a href="#">Serviços</a>
+    <a href="#">Contato</a>
+    <a href="#">Fundadores</a> 
+    <button class="btnlogin-popup" id="logout-btn">Sair</button>
+  </nav>
+</header>
+
+
+  <div class="info-box">
+    <h1>Bem-vindo, <span id="user-nome">Usuário</span>!</h1>
+    <p>Seu email: <span id="user-email">email@email.com</span></p>
+    <p>Aproveite para adquiri conhecimento.</p>
+  </div>
+
+  <script>
+    const nome = localStorage.getItem('userName');
+    const email = localStorage.getItem('userEmail');
+
+    if (!nome || !email) {
+      window.location.href = "index.html";
+    } else {
+      document.getElementById('user-nome').textContent = nome;
+      document.getElementById('user-email').textContent = email;
+    }
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
