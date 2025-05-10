@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bom dia com bom leite</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="logo">Bom Leite</div>
-
-    <!-- Botão hambúrguer para telas pequenas -->
-    <button id="menu-toggle" class="hamburger" aria-label="Abrir Menu">&#9776;</button>
-
-    <nav class="navegação" id="navbar">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+    <nav class="navbar" id="navbar">
       <a href="#" id="toggle-intro">Introdução</a>
       <a href="#" id="toggle-fundadores">Fundadores</a>
       <button class="btnlogin-popup" id="open-login">Login</button>
@@ -34,8 +32,8 @@
         <h1>Seja bem-vindo ao "Bom dia com bom leite"!</h1>
         <p>Aqui celebramos o amanhecer com alegria, fazendinha, e aquele leite fresquinho cheio de carinho. 🌞🐄</p>
         <p>Explore nossas histórias, conheça os fundadores e aproveite um site feito com amor e simplicidade!</p>
-        <p>Fundada em 1990, a Bom Leite é uma das pioneiras de São Bento do Una, atuando há mais de 30 anos no setor de laticínios. Apesar dos altos e baixos na produção, a empresa segue firme e em crescimento.</p>
-        <p>Sua sede fica na PE-180, Km 18, bairro José do Patrocínio Mota, com filiais em PE, AL, PB e BA. Reconhecida pela qualidade e compromisso com a segurança alimentar, a Bom Leite mantém uma equipe qualificada e estrutura moderna.</p>
+        <p>Fundada em 1990, a Bom Leite é uma das pioneiras de São Bento do Una, atuando há mais de 30 anos no setor de laticínios.</p>
+        <p>Sua sede fica na PE-180, Km 18, com filiais em PE, AL, PB e BA.</p>
       </section>
     </div>
   </div>
@@ -47,12 +45,12 @@
         <p><strong>Carlos Daniel</strong> – Desenvolvedor e idealizador da plataforma.</p>
         <p><strong>Pamela Melo</strong> – Desenvolvedor e idealizador da plataforma.</p>
         <p><strong>Gabriel Teixeira</strong> – Desenvolvedor e idealizador da plataforma.</p>
-        <p><strong>Anny Grazielly</strong> – Desenvolvedores de designer gráfico.</p>
-        <p><strong>Itallo Lopez</strong> – Desenvolvedores de designer gráfico.</p>
-        <p><strong>Everton Vinucius</strong> – Desenvolvedores de designer gráfico.</p>
-        <p><strong>Eduarda</strong> – Desenvolvedores de designer gráfico.</p>
-        <p><strong>João Lucas</strong> – Desenvolvedores de designer gráfico.</p>
-        <p><strong>João Pedro</strong> – Desenvolvedores de designer gráfico.</p>
+        <p><strong>Anny Grazielly</strong> – Designer gráfico.</p>
+        <p><strong>Itallo Lopez</strong> – Designer gráfico.</p>
+        <p><strong>Everton Vinucius</strong> – Designer gráfico.</p>
+        <p><strong>Eduarda</strong> – Designer gráfico.</p>
+        <p><strong>João Lucas</strong> – Designer gráfico.</p>
+        <p><strong>João Pedro</strong> – Designer gráfico.</p>
       </section>
     </div>
   </div>
@@ -69,7 +67,7 @@
         <input type="password" id="login-senha" placeholder=" " required>
         <label for="login-senha">Senha</label>
       </div>
-      <button class="btn">Entrar</button>
+      <button class="btn" id="login-btn">Entrar</button>
       <div class="login-link">
         Não tem conta? <a href="#" id="show-register">Cadastre-se</a>
       </div>
@@ -90,7 +88,7 @@
         <input type="password" id="register-senha" placeholder=" " required>
         <label for="register-senha">Senha</label>
       </div>
-      <button class="btn">Cadastrar</button>
+      <button class="btn" id="register-btn">Cadastrar</button>
       <div class="login-link">
         Já tem conta? <a href="#" id="show-login">Entrar</a>
       </div>
