@@ -17,6 +17,7 @@ body {
   background-position: center;
 }
 
+
 header {
   position: fixed;
   top: 0;
@@ -91,6 +92,7 @@ header {
   transform: scale(1.05);
 }
 
+
 .wrapper {
   position: relative;
   width: 400px;
@@ -123,7 +125,6 @@ header {
   margin-bottom: 20px;
 }
 
-/* ==== INPUT BOX COM LABEL FLUTUANTE ==== */
 .input-box {
   position: relative;
   margin-bottom: 25px;
@@ -161,7 +162,6 @@ header {
   padding: 0 5px;
   border-radius: 4px;
 }
-/* ==== FIM DO LABEL FLUTUANTE ==== */
 
 .remember-forgot {
   font-size: 0.9rem;
@@ -257,7 +257,7 @@ header {
   }
 }
 
-.close-btn {
+.close-form {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -270,36 +270,11 @@ header {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.close-btn:hover {
+.close-form:hover {
   transform: scale(1.2);
   color: #ff4f4f;
 }
 
-.user-info-box {
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 16px;
-  padding: 30px;
-  max-width: 400px;
-  margin: 150px auto 0;
-  text-align: center;
-  color: #fff;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
-.user-info-box h1 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.user-info-box p {
-  font-size: 1.1rem;
-  color: #eee;
-  margin-top: 10px;
-}
-/* ==== MODAL FUNDADORES ==== */
 .modal {
   position: fixed;
   top: 0;
@@ -331,16 +306,17 @@ header {
   border-radius: 20px;
   color: #fff;
   text-align: left;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
 .close-modal {
   position: absolute;
   top: 10px;
   right: 15px;
+  font-size: 1.8rem;
+  color: white;
   background: transparent;
   border: none;
-  font-size: 1.8rem;
-  color: #fff;
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
 }
@@ -348,4 +324,79 @@ header {
 .close-modal:hover {
   transform: scale(1.2);
   color: #ff4f4f;
+}
+
+
+.intro-section {
+  margin-top: 120px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.intro-box {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  max-width: 600px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.intro-box h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.intro-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .intro-box {
+    padding: 25px 15px;
+  }
+
+  .intro-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-box p {
+    font-size: 1rem;
+  }
+}
+
+
+.user-info-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 400px;
+  margin: 150px auto 0;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.user-info-box h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.user-info-box p {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-top: 10px;
 }
